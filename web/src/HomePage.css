@@ -1,0 +1,59 @@
+.btnHome1
+{
+    background-color: rgb(231, 68, 19);
+    height: 40px;
+    width: 200px;
+    color: black;
+    border-radius: 10px;
+    border: none; 
+     
+}
+
+.btnHome1:hover
+{
+    background-color:rgb(68, 99, 236);
+    color:white;
+}
+
+.featuredPro h5
+{
+   margin-top: 20px;
+}
+.card:hover
+{
+    box-shadow: -5px -2px 26px -3px rgba(0,0,0,0.76);
+    -webkit-box-shadow: -5px -2px 26px -3px rgba(0,0,0,0.76);
+    -moz-box-shadow: -5px -2px 26px -3px rgba(0,0,0,0.76);
+    
+}
+.footer
+{
+    background-color:rgb(212, 212, 212);
+    width:100%;
+}
+.footer h1
+{
+    font-weight: 700;
+}
+
+.btn2
+{
+    background-color: transparent;
+    height: 35px;
+    width: 200px;
+    color: black;
+    border: none;
+    text-align: left;
+
+    
+}
+.btn2:hover
+{
+    cursor: pointer;
+    position: relative;
+    transform: translateY(-5px);
+    color: #42575A
+}
+
+
+

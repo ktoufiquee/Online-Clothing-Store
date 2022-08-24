@@ -1,0 +1,16 @@
+.cardview{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 10px;
+    .card{
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        border: none;
+        border-radius: 10px;
+    }
+    .cardTitle{
+        color: #999;
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
