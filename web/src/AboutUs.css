@@ -1,0 +1,33 @@
+body{
+    background-color: white;
+}
+
+  
+  .about__content {
+    padding-left: 40px;
+    padding-top: 50px;
+  }
+  .about__img img {
+    padding-top: 50px;
+    height: 450px;
+    padding-bottom: 30px;
+  }
+  
+  .about__content h1 {
+    font-weight: 600;
+    
+  }
+  .about__content p2 {
+    font-weight: 350;
+    padding-left: 50px;
+    font-size: small;
+  }
+  .about__content p {
+    padding-right: 45px;
+    padding-top: 10px;
+  }
+.mt-2 {
+  padding-bottom: 60px;
+}
+  
+   

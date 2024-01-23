@@ -1,83 +1,69 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import "./../../styles/sidebar.scss";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import InventoryIcon from '@mui/icons-material/Inventory';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AddIcon from '@mui/icons-material/Add';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import ShareIcon from '@mui/icons-material/Share';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import LogoutIcon from '@mui/icons-material/Logout';
+import React, { Component } from "react";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
+import ListAltIcon from "@mui/icons-material/ListAlt";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AddIcon from "@mui/icons-material/Add";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ShareIcon from "@mui/icons-material/Share";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import LogoutIcon from "@mui/icons-material/Logout";
+import ViewCarouselIcon from "@mui/icons-material/ViewCarousel";
+import { Link } from "react-router-dom";
+import "./../../styles/sidebar.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-
-export default class sidebar extends Component {
+class sidebar extends Component {
   render() {
     return (
-      <div className="sidebar">
-        <div className="top">
-          <span className="heading">Online Clothing Store</span>
-        </div>
+      <div className="col-auto col-xl-2 col-md-3 px-sm-2 min-vh-100 sidebar">
+       
+        <ul className="sidebarContent" style={{ marginTop: "20px" }}>
 
-        <div className="center">
-          <ul>
-            <li style={{ marginTop: "10px" }}>
-              <DashboardIcon className="icon" />
-              <span>Dashbord</span>
-            </li>
-            <p className="title">Users</p>
-            <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Customers</span>
-            </li>
-            <li>
-              <BadgeOutlinedIcon className="icon" />
-              <span>Employees</span>
-            </li>
-            <p className="title">View</p>
-            <li>
-              <ListAltIcon className="icon" />
-              <span>Categories</span>
-            </li>
-            <li>
-              <InventoryIcon className="icon" />
-              <span>Products</span>
-            </li>
-            <li>
-              <ShoppingCartIcon className="icon" />
-              <span>Orders</span>
-            </li>
-            <p className="title">Add</p>
-            <li>
-              <AddIcon className="icon" />
-              <span>Add Category</span>
-            </li>
-            <li>
-              <Link to={"../add-product"}>
-                <AddCircleOutlineIcon className="icon" />
-                <span>Add Product</span>
-              </Link>
-            </li>
-            <li>
-              <ShareIcon className="icon" />
-              <span>Invite Link</span>
-            </li>
-            <p className="title">Account</p>
-            <li>
-              <AccountBoxIcon className="icon" />
-              <span>Profile</span>
-            </li>
-            <li>
-              <LogoutIcon className="icon" />
-              <span>Logout</span>
-            </li>
-
-          </ul>
-        </div>
+          <li className="sidebarContentItem">
+            <Link to={"../customer"} className="sidebar-link px-2">
+              <AccountCircleOutlinedIcon />
+              <span className="ms-1 d-none d-sm-inline ms-3">Customers</span>
+            </Link>
+          </li>
+          <li className="sidebarContentItem">
+            <Link to={"../category"} className="sidebar-link px-2">
+              <ListAltIcon />
+              <span className="ms-1 d-none d-sm-inline  ms-3">Categories</span>
+            </Link>
+          </li>
+          <li className="sidebarContentItem">
+            <Link to={"../ProductList"} className="sidebar-link px-2">
+              <InventoryIcon />
+              <span className="ms-1 d-none d-sm-inline  ms-3">Products</span>
+            </Link>
+          </li>
+          <li className="sidebarContentItem">
+            <Link to={"../order"} className="sidebar-link px-2">
+              <ShoppingCartIcon />
+              <span className="ms-1 d-none d-sm-inline  ms-3">Orders</span>
+            </Link>
+          </li>
+          <li className="sidebarContentItem">
+            <Link to={"../add-product"} className="sidebar-link px-2">
+            <AddCircleOutlineIcon />
+              <span className="ms-1 d-none d-sm-inline ms-3">Add Product</span>
+            </Link>
+          </li>
+          <li className="sidebarContentItem">
+            <Link to={"/SignOut"} className="sidebar-link px-2">
+            <LogoutIcon />
+              <span className="ms-1 d-none d-sm-inline  ms-3">Logout</span>
+            </Link>
+          </li>
+          
+        </ul>
       </div>
-    )
+    );
   }
 }
+
+
+export default sidebar;

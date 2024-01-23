@@ -10,10 +10,19 @@ import New from './admin/pages/New';
 import Single from './admin/pages/Single';
 import Product from './Product';
 import Signup from './Signup';
+import Signout from './Signout';
 import AddProduct from './AddProduct';
 import HomePage from './HomePage';
 import Login from './LoginUi';
-import NavComponent from './components/NavComponent';
+import NavComponent from './components/Navbar';
+import CategoryList from './admin/pages/CategoryList';
+import Collection from './Collection';
+import Cart from './Cart';
+import CustomerList from './admin/pages/CustomerList';
+import AboutUs from './AboutUs';
+import OrderList from './admin/pages/OrderList';
+import ProductList from './admin/pages/ProductList';
+
 
 export default class App extends Component {
   render() {
@@ -29,12 +38,16 @@ export default class App extends Component {
               <Route path="admin">
                 <Route index element={<Dashboard />} />
                 <Route path="add-product" element={<AddProduct />} />
+                <Route path="category" element={<CategoryList />} />
+                <Route path="customer" element={<CustomerList />} />
+                <Route path="order" element={<OrderList />} />
+                <Route path="ProductList" element={<ProductList />} />
               </Route>
-              <Route path="product">
-                <Route index element={<List />} />
-                <Route path=":productId" element={<Single />} />
-                <Route path="new" element={<New />} />
-              </Route>
+              <Route path="product/:id" element={<Product />} />
+              <Route path="collection/:id" element={<Collection />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="AboutUs" element={<AboutUs />} />
+              <Route path='Signout' element={<Signout />} />
             </Route>
 
           </Routes>
@@ -44,21 +57,3 @@ export default class App extends Component {
   }
 }
 
-
-/*
-<Route path="/">
-              <Route index element={<Dashboard />} />
-              <Route path="signup" element={<Signup />} />
-              <Route path="users">
-                <Route index element={<List />} />
-                <Route path=":userId" element={<Single />} />
-                <Route path="new" element={<New />} />
-              </Route>
-              
-              <Route path="product">
-                <Route index element={<List />} />
-                <Route path=":productId" element={<Single />} />
-                <Route path="new" element={<New />} />
-              </Route>
-            </Route>
-            */

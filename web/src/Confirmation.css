@@ -1,0 +1,37 @@
+body{
+    background-color: white;
+}
+p2{
+    padding-left: 400px;
+    padding-top: 50px;
+}
+.Order_Info{
+    padding-left: 40px;
+    background-color: rgb(220,220,220);
+    align-items: center;
+}
+
+.Address{
+    background-color:  rgb(220,220,220);
+    align-items: center;
+}
+.Order_Info h2{
+    font-weight: 500;
+    padding-right: 150px;
+    
+  }
+
+  .text-center h2{
+    font-weight: 500;
+    padding-right: 200px;
+    
+  }
+  .Order_Info p{
+    padding-left: 100px;
+    padding-top: 10px;
+  }
+
+  .Address p {
+    padding-right: 45px;
+    padding-top: 10px;
+  }

@@ -1,23 +1,35 @@
 import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Options } from '@splidejs/splide';
+
 
 import '@splidejs/react-splide/css/skyblue';
 
+var config = require('../utils/config.json');
+
 class ProductSlider extends React.Component {
 
-    mainRef = React.createRef();
-    thumbsRef = React.createRef();
+    constructor(props) {
+        super(props);
+        this.mainRef = React.createRef();
+        this.thumbsRef = React.createRef();
+    }
 
     componentDidMount() {
         if (this.mainRef.current && this.thumbsRef.current && this.thumbsRef.current.splide) {
             this.mainRef.current.sync(this.thumbsRef.current.splide);
+            console.log('splideeeeee');
         }
     }
 
+    generateMediaUrl(filename) {
+        return config.server + "/images/" + filename;
+    }
+
     renderSlides() {
-        return generateSlides().map(slide => (
-            <SplideSlide key={slide.src}>
-                <img src={slide.src} alt={slide.alt} />
+        return this.props.mediaContents.map((slide, index) => (
+            <SplideSlide key={index}>
+                <img src={this.generateMediaUrl(slide.FileName)} alt={slide.MediaID} />
             </SplideSlide>
         ));
     }
@@ -53,28 +65,18 @@ class ProductSlider extends React.Component {
         };
 
         return (
-            <div>
-                <Splide options={mainOptions} ref={this.mainRef} aria-labelledby="product-image">
-                    {this.renderSlides()}
-                </Splide>
+            this.props.mediaContents == null ? '' : (
+                <div>
+                    <Splide key={2} options={mainOptions} ref={this.mainRef} aria-labelledby="product-image">
+                        {this.renderSlides()}
+                    </Splide>
 
-                <Splide className="splide-wrapper site" options={thumbsOptions} ref={this.thumbsRef} aria-label="product-image-thumbnail">
-                    {this.renderSlides()}
-                </Splide>
-            </div>
+                    <Splide key={3} className="splide-wrapper site" options={thumbsOptions} ref={this.thumbsRef} aria-label="product-image-thumbnail">
+                        {this.renderSlides()}
+                    </Splide>
+                </div>)
         );
     }
-}
-
-const generateSlides = (length = 10, sig = 0) => {
-    return Array.from({ length }).map((value, index) => {
-        index = sig || index;
-
-        return {
-            src: `https://source.unsplash.com/random/800x450?sig=${index}`,
-            alt: `Image ${index + 1}`,
-        };
-    });
 }
 
 export default ProductSlider;
